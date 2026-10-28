@@ -1,0 +1,220 @@
+<title>كيف أبيع دوراتي؟ احجزي مقعدك</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: a guided path. Hero, then 4 numbered viewing steps (3 talks + the system demo), program details, then the booking form at the end. Plum/pink = workshop identity. */
+:root{--bg:#FDF6FA;--card:#FFFFFF;--ink:#2A1236;--mute:#6E5A7A;--line:#EBD9E6;--plum:#5B1F7A;--plum2:#3E1256;--rose:#C2417E;--soft:#F6E4F0;--on-plum:#FFF3FA;--gold:#C9A25A;--ok:#2F7D5B;--bad:#B3261E;
+ --disp:'El Messiri','Tajawal',serif;--body:'Tajawal',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#170B1F;--card:#221030;--ink:#F7ECF5;--mute:#BFA6CC;--line:#3E2552;--plum:#C58BE6;--plum2:#2E1244;--rose:#F07DB2;--soft:#2D1640;--on-plum:#FFF3FA;--gold:#D9B46A;--ok:#6FCB9F;--bad:#FF8A80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#170B1F;--card:#221030;--ink:#F7ECF5;--mute:#BFA6CC;--line:#3E2552;--plum:#C58BE6;--plum2:#2E1244;--rose:#F07DB2;--soft:#2D1640;--on-plum:#FFF3FA;--gold:#D9B46A;--ok:#6FCB9F;--bad:#FF8A80;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.75;direction:rtl;padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:900px;margin:0 auto}
+h1,h2,h3{font-family:var(--disp);line-height:1.3;text-wrap:balance;margin:0}
+h2{font-size:clamp(26px,5vw,36px);color:var(--plum)}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.top img{height:46px;width:auto;max-width:50vw}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--plum);color:var(--on-plum);border:0;border-radius:999px;padding:12px 26px;font:700 17px var(--body);text-decoration:none;cursor:pointer;min-height:48px}
+:root[data-theme="dark"] .btn,:root:not([data-theme="light"]) .btn{}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#2A1236}}
+:root[data-theme="dark"] .btn{color:#2A1236}
+.btn.ghost{background:transparent;color:var(--plum);border:2px solid var(--plum)}
+.btn:hover{filter:brightness(1.08)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:28px 0 40px}
+.badge{display:inline-block;background:var(--soft);color:var(--rose);font-weight:700;font-size:15px;border-radius:999px;padding:4px 16px;margin-bottom:14px}
+.hero h1{font-size:clamp(32px,6.4vw,52px);color:var(--plum);margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--rose)}
+.hero p.lead{color:var(--mute);font-size:18px;margin-bottom:22px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero figure{margin:0}
+.hero img{width:100%;border-radius:28px;display:block;border:1px solid var(--line)}
+/* steps */
+.sec{padding:34px 0}
+.sec>header{margin-bottom:22px;display:grid;gap:6px}
+.sec>header p{color:var(--mute)}
+.steps{display:grid;gap:22px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:26px;overflow:hidden}
+.step .head{display:flex;gap:14px;align-items:center;padding:16px 20px}
+.num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--plum);color:var(--on-plum);display:grid;place-items:center;font:700 22px var(--disp)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .num{color:#2A1236}}
+:root[data-theme="dark"] .num{color:#2A1236}
+.step h3{font-size:clamp(20px,4vw,26px)}
+.step .tag{margin-inline-start:auto;font-size:14px;color:var(--mute);white-space:nowrap}
+.vid{position:relative;background:var(--plum2);aspect-ratio:9/16;max-height:78vh;margin:0 auto;width:100%;max-width:420px}
+.vid.wide{aspect-ratio:16/9;max-width:none;max-height:none}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--plum2)}
+.vid.wide video{object-fit:contain}
+.soon{position:absolute;inset:0;display:none;flex-direction:column;gap:10px;align-items:center;justify-content:center;text-align:center;padding:24px;color:#FFF3FA;background:linear-gradient(160deg,#5B1F7A,#3E1256)}
+.soon b{font:700 24px var(--disp)}
+.soon span{opacity:.85;font-size:15px}
+.vid.nofile .soon{display:flex}
+.vid.nofile video{display:none}
+.stepwrap{padding:0 0 4px;background:var(--card)}
+/* program */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px}
+.panel h3{font-size:22px;color:var(--plum);margin-bottom:6px}
+.panel .part{color:var(--rose);font-weight:700;font-size:15px;margin-bottom:4px}
+ul.ck{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+ul.ck li{position:relative;padding-inline-start:30px}
+ul.ck li::before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:16px;height:9px;border-inline-start:3px solid var(--rose);border-bottom:3px solid var(--rose);transform:rotate(-45deg) translate(2px,-4px)}
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.stage{background:var(--soft);border-radius:18px;padding:16px}
+.stage b{display:block;color:var(--plum);font-family:var(--disp);font-size:18px}
+.stage span{color:var(--mute);font-size:15px;line-height:1.6}
+.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;align-items:center}
+.split img{width:100%;border-radius:22px;border:1px solid var(--line);display:block}
+.split.rev{grid-template-columns:1.2fr .8fr}
+.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.gift{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+.gift b{display:block;color:var(--plum);font-family:var(--disp);font-size:18px;margin-bottom:2px}
+.gift span{font-size:15px;color:var(--mute);line-height:1.6;display:block}
+.res{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.res span{background:var(--soft);color:var(--plum);border-radius:999px;padding:6px 16px;font-weight:700;font-size:15px}
+/* form */
+.formcard{background:var(--plum2);color:#FFF3FA;border-radius:30px;padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+.formcard h2{color:#FFF3FA}
+.formcard .why{color:#E6CFF0;margin-top:10px}
+.formcard ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px;color:#F3E2F8}
+.formcard li::before{content:"●";color:#F07DB2;margin-inline-end:8px;font-size:11px}
+form{display:grid;gap:14px;background:var(--card);color:var(--ink);border-radius:22px;padding:22px}
+label{display:grid;gap:6px;font-weight:700;font-size:15px}
+input,select{font:500 17px var(--body);color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:12px 14px;min-height:50px;width:100%}
+input:focus,select:focus{border-color:var(--plum);outline:none}
+.hp{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip-path:inset(50%);pointer-events:none}
+.msg{border-radius:14px;padding:12px 14px;font-weight:700;font-size:16px}
+.msg.ok{background:rgba(47,125,91,.14);color:var(--ok)}
+.msg.err{background:rgba(179,38,30,.12);color:var(--bad)}
+.msg a{color:inherit}
+.small{font-size:14px;color:var(--mute);font-weight:400}
+footer{padding:30px 0 40px;text-align:center;color:var(--mute);font-size:15px;display:grid;gap:6px}
+footer b{color:var(--plum)}
+@media (max-width:720px){
+ .hero,.cols,.split,.split.rev,.formcard{grid-template-columns:1fr}
+ .stages,.gifts{grid-template-columns:1fr}
+ .hero figure{order:-1;max-width:420px;margin:0 auto}
+ .step .tag{display:none}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:filter .2s,transform .2s}.btn:active{transform:scale(.97)}}
+</style>
+
+<div class="wrap">
+ <div class="top">
+  <img src="logo_s.png" alt="أكاديمية دنيا للتدريب" onerror="this.style.display='none'">
+  <a class="btn" href="#book">احجزي مقعدك</a>
+ </div>
+
+ <section class="hero">
+  <div>
+   <span class="badge">مسار خاص بالنساء فقط · المقاعد محدودة جداً</span>
+   <h1>من مجرد «فكرة في راسك» لـ <em>مشروع تدريبي</em> حقيقي ومربح</h1>
+   <p class="lead">برنامج «كيف أبيع دوراتي؟» مع الكوتش دنيا. تبني دورتك، تصوّرينها، وتبيعينها بسيستم واضح، خطوة بخطوة.</p>
+   <div class="cta"><a class="btn" href="#book">احجزي مقعدك الآن</a><a class="btn ghost" href="#steps">شوفي الخطوات</a></div>
+  </div>
+  <figure><img src="program.jpg" alt="تفاصيل برنامج كيف أبيع دوراتي" fetchpriority="high"></figure>
+ </section>
+
+ <section class="sec" id="steps">
+  <header><h2>4 خطوات تفهمي بيها السيستم</h2><p>شوفي الفيديوهات بالترتيب. في الأخير تلقي استمارة الحجز.</p></header>
+  <div class="steps">
+   <article class="step"><div class="head"><span class="num">1</span><h3>كفاش ننجح كمدربة؟</h3><span class="tag">فيديو</span></div>
+    <div class="stepwrap"><div class="vid" data-v="v1.mp4"><video controls playsinline preload="metadata" src="v1.mp4"></video><div class="soon"><b>كفاش ننجح كمدربة؟</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></div></article>
+   <article class="step"><div class="head"><span class="num">2</span><h3>ما هو سيستم البيع؟</h3><span class="tag">فيديو</span></div>
+    <div class="stepwrap"><div class="vid" data-v="v2.mp4"><video controls playsinline preload="metadata" src="v2.mp4"></video><div class="soon"><b>ما هو سيستم البيع؟</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></div></article>
+   <article class="step"><div class="head"><span class="num">3</span><h3>سيستم البيع</h3><span class="tag">فيديو</span></div>
+    <div class="stepwrap"><div class="vid" data-v="v3.mp4"><video controls playsinline preload="metadata" src="v3.mp4"></video><div class="soon"><b>سيستم البيع</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></div></article>
+   <article class="step"><div class="head"><span class="num">4</span><h3>نموذج سيستم البيع</h3><span class="tag">عرض السيستم</span></div>
+    <div class="stepwrap"><div class="vid wide"><video controls playsinline preload="metadata" src="system.mp4"></video></div></div></article>
+  </div>
+ </section>
+
+ <section class="sec">
+  <header><h2>تفاصيل البرنامج</h2><p>حصتان متكاملتان: تبنين دورتك، ثم تطبقينها مع الكوتش.</p></header>
+  <div class="cols">
+   <div class="panel"><div class="part">الحصة 1</div><h3>من الفكرة إلى الهندسة التدريبية</h3>
+    <ul class="ck"><li><b>بناء الطلب:</b> كفاش تصممي دورة يطلبها السوق</li><li><b>التطوير والابتكار:</b> أساليب تدريب حديثة</li><li><b>الهيكلة الاحترافية:</b> الأهداف والمحاور والمنهجية</li><li><b>العميل المثالي:</b> سيكولوجية جمهورك المستهدف</li></ul></div>
+   <div class="panel"><div class="part">الحصة 2</div><h3>التدريب التطبيقي والتنفيذ مع الكوتش دنيا</h3>
+    <ul class="ck"><li><b>حضورياً:</b> تغلبي رهبة الكاميرا وتكتسبي الكاريزما</li><li><b>أونلاين:</b> تطبيق عبر فيديوهات مع مراجعة وتصحيح خاص من الكوتش</li></ul></div>
+  </div>
+  <div class="stages">
+   <div class="stage"><b>المرحلة 1</b><span>تأسيس البرنامج التدريبي ووضع الخطة التسويقية</span></div>
+   <div class="stage"><b>المرحلة 2</b><span>إنتاج وتصوير المحتوى</span></div>
+   <div class="stage"><b>المرحلة 3</b><span>الانطلاقة والبيع</span></div>
+  </div>
+ </section>
+
+ <section class="sec">
+  <div class="split">
+   <img src="book.jpg" alt="كتاب كيف أبيع دوراتي" loading="lazy">
+   <div><h2>هدايا وبونص البرنامج</h2>
+    <div class="gifts" style="grid-template-columns:1fr">
+     <div class="gift"><b>كتاب «كيف أبيع دوراتي؟»</b><span>دليل عملي للمتابعة والتطبيق خطوة بخطوة</span></div>
+     <div class="gift"><b>ورشة «خطة محتوى شهرية»</b><span>خطة جاهزة للتسويق لدورتك</span></div>
+     <div class="gift"><b>اختبار أولي</b><span>تحددي به نقطة انطلاقك ومستواك الحالي</span></div>
+    </div></div>
+  </div>
+ </section>
+
+ <section class="sec">
+  <div class="split rev">
+   <div><h2>استوديو تصوير خاص بالنساء</h2><p style="color:var(--mute);margin-top:8px">تصوّري دورتك في استوديو مجهز بالإضاءة والديكور ومساحات مختلفة، في جو مريح وخصوصية تامة.</p>
+    <h3 style="margin-top:22px;font-size:22px;color:var(--plum)">النتيجة؟</h3><p style="color:var(--mute)">ما راحش تخرجي بـ«معرفة» فقط، بل بـ:</p>
+    <div class="res"><span>دورة منظمة</span><span>خطة مالية وتسويقية</span><span>خطة عمل واضحة للتنفيذ والبيع</span></div></div>
+   <img src="studio.jpg" alt="استوديو أكاديمية دنيا" loading="lazy">
+  </div>
+ </section>
+
+ <section class="sec" id="book">
+  <div class="formcard">
+   <div><h2>احجزي مقعدك الآن</h2>
+    <p class="why">عمّري الاستمارة وتتواصل معاك فريق الأكاديمية لتأكيد حجزك.</p>
+    <ul><li>مسار خاص بالنساء فقط</li><li>أونلاين، والتسجيل مفتوح من أي بلد</li><li>الدفع عند الاستلام</li></ul></div>
+   <form id="f" novalidate>
+    <label for="name">الاسم الكامل<input id="name" name="name" autocomplete="name" required></label>
+    <label for="phone">رقم الهاتف / واتساب<input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="05XXXXXXXX" required></label>
+    <label for="wilaya">الولاية / البلد<input id="wilaya" name="wilaya" autocomplete="address-level1"></label>
+    <label for="field">تخصصك أو الشيء اللي تحبي تدربيه<input id="field" name="field" placeholder="مثال: تنظيم الوقت، الطبخ، التصوير..."></label>
+    <label for="track">أي مسار يهمك؟<select id="track" name="track"><option>المسار الكامل: الكوتشينغ + كيف أبيع دوراتي</option><option>برنامج «كيف أبيع دوراتي؟» فقط</option><option>برنامج الكوتشينغ الاحترافي فقط</option></select></label>
+    <input class="hp" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" id="go" type="submit">إرسال الحجز</button>
+    <div id="out" role="status" aria-live="polite"></div>
+    <p class="small">معلوماتك تصل لفريق الأكاديمية فقط.</p>
+   </form>
+  </div>
+ </section>
+
+ <footer><b>أكاديمية دنيا للتدريب · الكوتش دنيا</b><span>مسار خاص بالنساء فقط</span><span>للاستفسار: <b dir="ltr">0793163561</b></span></footer>
+</div>
+
+<script>
+const HOOK='https://n8n.dounia1acdemy.com/webhook/sell-courses-booking';
+document.querySelectorAll('.vid[data-v]').forEach(b=>{
+  const v=b.querySelector('video'),mark=()=>b.classList.add('nofile');
+  v.addEventListener('error',mark);
+  fetch(v.getAttribute('src'),{method:'HEAD'}).then(r=>{if(!r.ok)mark()}).catch(()=>{});
+});
+const f=document.getElementById('f'),out=document.getElementById('out'),go=document.getElementById('go');
+const show=(c,h)=>{out.innerHTML='<div class="msg '+c+'">'+h+'</div>'};
+const wa='https://wa.me/213793163561?text='+encodeURIComponent('السلام عليكم، حبيت نحجز في برنامج كيف أبيع دوراتي');
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(f).entries());
+  if(!d.name.trim()||d.phone.replace(/\D/g,'').length<8){show('err','اكتبي اسمك ورقم هاتف صحيح.');return}
+  go.disabled=true;go.textContent='جاري الإرسال...';
+  try{
+    const r=await fetch(HOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    const j=await r.json();
+    if(j.ok){show('ok','تم تسجيل حجزك. نتواصل معاك قريباً على رقمك.');f.reset();go.textContent='تم الإرسال';return}
+    throw 0;
+  }catch(_){
+    show('err','ما وصلناش طلبك. أعيدي المحاولة أو راسلينا على <a href="'+wa+'" target="_blank" rel="noopener">واتساب</a> أو على الرقم <span dir="ltr">0793163561</span>.');
+  }
+  go.disabled=false;if(go.textContent!=='تم الإرسال')go.textContent='إرسال الحجز';
+});
+</script>

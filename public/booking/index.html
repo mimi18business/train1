@@ -88,9 +88,10 @@ input:focus,select:focus{border-color:var(--pri);outline:none}
 .small{font-size:14px;color:var(--mute);font-weight:400}
 footer{padding:32px 0 44px;text-align:center;color:var(--mute);font-size:15px;display:grid;gap:6px;border-top:1px solid var(--line)}
 footer b{color:var(--ink)}
+@media (max-width:1000px){.steps{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){
  .hero,.cols,.studio,.formcard{grid-template-columns:1fr}
- .steps{grid-template-columns:1fr 1fr}.stages,.gifts{grid-template-columns:1fr}
+ .steps,.stages,.gifts{grid-template-columns:1fr}
  .hero figure{order:-1;max-width:340px;margin:0 auto 10px}
  .vid{max-width:380px;margin:0 auto}
 }

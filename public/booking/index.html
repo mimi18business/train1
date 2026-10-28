@@ -35,7 +35,7 @@ a{color:inherit}
 .sec{padding:40px 0;border-top:1px solid var(--line)}
 .sec>header{margin-bottom:24px;display:grid;gap:6px}
 .sec>header p{color:var(--mute)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .step{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
 .step.wide{grid-column:1/-1}
 .step .head{display:flex;gap:12px;align-items:center;padding:16px 18px}
@@ -90,7 +90,7 @@ footer{padding:32px 0 44px;text-align:center;color:var(--mute);font-size:15px;di
 footer b{color:var(--ink)}
 @media (max-width:760px){
  .hero,.cols,.studio,.formcard{grid-template-columns:1fr}
- .steps,.stages,.gifts{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr}.stages,.gifts{grid-template-columns:1fr}
  .hero figure{order:-1;max-width:340px;margin:0 auto 10px}
  .vid{max-width:380px;margin:0 auto}
 }
@@ -110,12 +110,13 @@ footer b{color:var(--ink)}
  </section>
 
  <section class="sec" id="steps">
-  <header><h2>4 خطوات تفهمي بيها السيستم</h2><p>شوفي الفيديوهات بالترتيب. في الأخير تلقي استمارة الحجز.</p></header>
+  <header><h2>5 خطوات تفهمي بيها السيستم</h2><p>شوفي الفيديوهات بالترتيب. في الأخير تلقي استمارة الحجز.</p></header>
   <div class="steps">
-   <article class="step"><div class="head"><span class="num">1</span><h3>كفاش ننجح كمدربة؟</h3></div><div class="vid" data-v="v1.mp4"><video controls playsinline preload="metadata" poster="p1.jpg" src="v1.mp4"></video><div class="soon"><b>كفاش ننجح كمدربة؟</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></article>
-   <article class="step"><div class="head"><span class="num">2</span><h3>ما هو سيستم البيع؟</h3></div><div class="vid" data-v="v2.mp4"><video controls playsinline preload="metadata" poster="p2.jpg" src="v2.mp4"></video><div class="soon"><b>ما هو سيستم البيع؟</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></article>
-   <article class="step"><div class="head"><span class="num">3</span><h3>سيستم البيع</h3></div><div class="vid" data-v="v3.mp4"><video controls playsinline preload="metadata" poster="p3.jpg" src="v3.mp4"></video><div class="soon"><b>سيستم البيع</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></article>
-   <article class="step wide"><div class="head"><span class="num">4</span><h3>نموذج سيستم البيع</h3></div><div class="vid wideV"><video controls playsinline preload="metadata" poster="p4.jpg" src="system.mp4"></video></div></article>
+   <article class="step"><div class="head"><span class="num">1</span><h3>تعرفي على البرنامج</h3></div><div class="vid" data-v="s1.mp4"><video controls playsinline preload="metadata" poster="s1_p.jpg" src="s1.mp4"></video><div class="soon"><b>تعرفي على البرنامج</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></article>
+   <article class="step"><div class="head"><span class="num">2</span><h3>ما هو سيستم البيع؟</h3></div><div class="vid" data-v="s2.mp4"><video controls playsinline preload="metadata" poster="s2_p.jpg" src="s2.mp4"></video><div class="soon"><b>ما هو سيستم البيع؟</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></article>
+   <article class="step"><div class="head"><span class="num">3</span><h3>كيف أبيع دوراتي؟</h3></div><div class="vid" data-v="s3.mp4"><video controls playsinline preload="metadata" poster="s3_p.jpg" src="s3.mp4"></video><div class="soon"><b>كيف أبيع دوراتي؟</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></article>
+   <article class="step"><div class="head"><span class="num">4</span><h3>ماذا ستحصلين عليه؟</h3></div><div class="vid" data-v="s4.mp4"><video controls playsinline preload="metadata" poster="s4_p.jpg" src="s4.mp4"></video><div class="soon"><b>ماذا ستحصلين عليه؟</b><span>الفيديو قيد الرفع، يظهر هنا قريباً</span></div></div></article>
+   <article class="step wide"><div class="head"><span class="num">5</span><h3>نموذج سيستم البيع</h3></div><div class="vid wideV"><video controls playsinline preload="metadata" poster="p4.jpg" src="system.mp4"></video></div></article>
   </div>
  </section>
 

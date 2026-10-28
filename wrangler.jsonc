@@ -1,1 +1,10 @@
-{"name":"train1","compatibility_date":"2026-10-01","assets":{"directory":"./"},"routes":[{"pattern":"train1.dounia1acdemy.com","custom_domain":true}]}
+{
+  "name": "train1",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true, "html_handling": "none" },
+  "routes": [
+    { "pattern": "train1.dounia1acdemy.com", "custom_domain": true },
+    { "pattern": "training.dounia1acdemy.com", "custom_domain": true }
+  ]
+}

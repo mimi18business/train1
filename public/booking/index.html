@@ -74,6 +74,7 @@ ul.ck li::before{content:"";position:absolute;inset-inline-start:0;top:.6em;widt
 .res{display:grid;gap:10px}
 .res span{background:var(--soft);color:var(--pri2);border-radius:12px;padding:12px 16px;font-weight:700;font-size:16px}
 .formcard{background:var(--soft);border:1px solid #D9DCEA;border-radius:24px;padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+.price{margin-top:14px;display:flex;align-items:baseline;flex-wrap:wrap;gap:10px 14px}.price .now{font:800 clamp(34px,6vw,46px)/1 var(--head,var(--body));color:var(--pri)}.price .now small{font-size:18px;margin-inline-start:4px}.price .was{color:var(--mute);text-decoration:line-through;font-size:20px}.price .tag{background:var(--gold);color:#1a1a1a;border-radius:99px;padding:3px 12px;font:700 14px var(--body)}
 .formcard .why{color:var(--mute);margin-top:10px}
 .formcard ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px}
 .formcard li::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-inline-end:10px}
@@ -154,6 +155,7 @@ footer b{color:var(--ink)}
  <section class="sec" id="book">
   <div class="formcard">
    <div><h2>احجزي مقعدك الآن</h2>
+    <div class="price" aria-label="السعر"><span class="now">25,000<small>دج</small></span><span class="was">45,000 دج</span><span class="tag">وفّري 20,000 دج</span></div>
     <p class="why">عمّري الاستمارة وتتواصل معاك فريق الأكاديمية لتأكيد حجزك.</p>
     <ul><li>مسار خاص بالنساء فقط</li><li>أونلاين، والتسجيل مفتوح من أي بلد</li><li>الدفع عند الاستلام</li></ul></div>
    <form id="f" novalidate>

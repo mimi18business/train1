@@ -70,7 +70,7 @@ footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
 @media(max-width:900px){.four{grid-template-columns:1fr 1fr}}
 @media(max-width:720px){.four,.vids,.two,.gift,.learn,.steps,.coach{grid-template-columns:1fr}.coach img{max-width:240px}.sticky{display:block}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head>
+.labvid{margin:20px auto 6px;max-width:300px;text-align:center}.labvid video{width:100%;aspect-ratio:9/16;border-radius:22px;border:3px solid var(--gold);background:#000;display:block}.labvid p{font-size:14px;margin-top:8px;opacity:.9}</style></head>
 <body>
 <header class="hero"><div class="wrap">
  <div class="top"><img src="logo.png" alt="أكاديمية دنيا"><span class="tag">ورشة أونلاين</span></div>
@@ -142,6 +142,7 @@ footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
 <section><div class="follow">
  <h2>وبعد الورشة: المتابعة</h2>
  <p>ما نتركوكش وحدك بعد الورشة. في المتابعة تطبقي بنفسك في <b>مختبر الإعلانات الممولة</b>، وتشوفي بعينك واش يمشي في مشروعك، وتقرري واش تعملي بعد.</p>
+ <div class="labvid"><video controls muted loop playsinline preload="none" poster="lab10.jpg"><source src="lab10.mp4" type="video/mp4"></video><p>لقطة من مختبر الإعلانات الممولة: دليل عملي واختبار تطبيقي يبني لك خطتك.</p></div>
  <div class="steps"><div>1 · تحددي نقطة بدايتك</div><div>2 · تطبقي في مختبر الإعلانات الممولة</div><div>3 · تقرري خطوتك الجاية</div></div>
 </div></section>
 
@@ -163,7 +164,7 @@ footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
   <button class="btn" type="submit" id="go">سجلي الآن</button>
   <p id="msg" role="status" aria-live="polite"></p>
  </form>
- <p class="lead" style="margin-top:14px">للاستفسار: <a href="tel:0782076898" dir="ltr" style="color:var(--plum);font-weight:800">0782076898</a></p>
+ <p class="lead" style="margin-top:14px">للاستفسار: <a href="tel:0793163561" dir="ltr" style="color:var(--plum);font-weight:800">0793163561</a></p>
 </section>
 <footer>أكاديمية دنيا للتدريب · الشراقة، الجزائر</footer>
 </main>
@@ -181,6 +182,6 @@ document.getElementById('f').addEventListener('submit',async ev=>{ev.preventDefa
  if(ad.length<5){m.textContent='يرجى كتابة العنوان كاملاً.';return}
  g.disabled=true;m.textContent='جاري التسجيل...';
  try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,phone:p,email:em,wilaya:w,address:ad,website:f.site.value,offer:'ورشة أسرار المبيعات'})});
-  if(!r.ok)throw 0;m.textContent='تم تسجيلك. نتواصلوا معاك قريباً.';f.reset()}catch(e){m.textContent='صار خطأ. جربي مرة ثانية أو اتصلي على 0782076898.';g.disabled=false}});
+  if(!r.ok)throw 0;m.textContent='تم تسجيلك. نتواصلوا معاك قريباً.';f.reset()}catch(e){m.textContent='صار خطأ. جربي مرة ثانية أو اتصلي على 0793163561.';g.disabled=false}});
 </script>
 </body></html>

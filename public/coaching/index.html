@@ -235,6 +235,7 @@ h2::before{content:"";position:absolute;top:0;inset-inline-start:0;width:56px;he
     <form id="f" novalidate>
       <label for="n">الاسم الكامل</label><input id="n" autocomplete="name" required>
       <label for="p">رقم الهاتف / واتساب</label><input id="p" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="05 XX XX XX XX" required>
+      <label for="e">البريد الإلكتروني</label><input id="e" type="email" inputmode="email" autocomplete="email" dir="ltr" placeholder="name@gmail.com" required>
       <label for="w">الولاية (اختياري)</label><input id="w">
       <button class="btn" type="submit">أريد التسجيل بـ 5000 دج</button>
       <p class="msg" id="m" role="status"></p>
@@ -251,12 +252,13 @@ const ENDPOINT = "https://n8n.dounia1acdemy.com/webhook/workshop-signup";
 const f=document.getElementById('f'),m=document.getElementById('m');
 f.addEventListener('submit',async e=>{
   e.preventDefault();
-  const n=f.n.value.trim(),p=f.p.value.trim();
+  const n=f.n.value.trim(),p=f.p.value.trim(),em=f.e.value.trim();
   if(n.length<2){m.textContent='اكتبي اسمك الكامل.';return}
   if(!/^[+0-9\s().-]{8,25}$/.test(p)){m.textContent='رقم الهاتف غير صحيح.';return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){m.textContent='اكتبي بريدك الإلكتروني بشكل صحيح.';return}
   if(!ENDPOINT){m.textContent='هذه معاينة: الإرسال لم يُربط بعد بقاعدة التسجيلات.';return}
   try{
-    const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,phone:p,wilaya:f.w.value.trim(),offer:'workshop-5000'})});
+    const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,phone:p,email:em,wilaya:f.w.value.trim(),offer:'workshop-5000'})});
     m.textContent=r.ok?'وصلنا تسجيلك، نتواصلو معاك قريبًا.':'تعذر الإرسال، حاولي مرة أخرى.';
     if(r.ok)f.reset();
   }catch(_){m.textContent='تعذر الإرسال، تأكدي من الاتصال وحاولي مرة أخرى.'}

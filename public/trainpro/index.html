@@ -206,6 +206,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mute);font-si
 <div class="out" id="sum"></div>
 <div class="btns" style="margin:0"><button class="btn" data-copy="sum">انسخي ملخصي</button><a class="btn ghost" id="tg" target="_blank" rel="noopener">أرسليه للكوتش على تلغرام</a></div><div class="sendbox" style="background:var(--soft);border-radius:16px;padding:16px;display:grid;gap:10px"><b>أرسلي ملخصك لأكاديمية دنيا (اختياري)</b><p class="lead" style="margin:0;font-size:15px">لا يُرسل شيء إلا إذا ضغطتِ زر الإرسال أدناه.</p>
 <input id="sn" type="text" placeholder="اسمك الكامل" autocomplete="name" maxlength="80"><input id="sp" type="tel" inputmode="tel" placeholder="رقم الهاتف / واتساب (مثال: +213...)" autocomplete="tel" maxlength="25" style="direction:ltr;text-align:right">
+<input id="se" type="email" inputmode="email" placeholder="البريد الإلكتروني" autocomplete="email" maxlength="120" style="direction:ltr;text-align:right">
 <input id="sw" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 <label class="chk"><input type="checkbox" id="sc"><span>أوافق على إرسال اسمي ورقمي وملخصي لأكاديمية دنيا للتواصل معي بخصوص متابعتي.</span></label>
 <button class="btn" id="send" type="button">أرسلي ملخصي للأكاديمية</button></div></div>
@@ -337,13 +338,14 @@ $('done').onclick=function(){render();var q=window.__p,miss=[];
  $('sum').textContent=sum;$('tg').href='https://t.me/+213542982629';$('report').scrollIntoView({behavior:'smooth',block:'nearest'})};
 $('reset').onclick=function(){var b=$('reset');if(!b.dataset.s){b.dataset.s=1;b.textContent='اضغطي مرة ثانية للتأكيد';setTimeout(function(){delete b.dataset.s;b.textContent='امسحي كل شيء'},3000);return}try{localStorage.removeItem(KEY)}catch(e){}location.reload()};
 var sending=false;$('send').onclick=function(){
- if(sending)return;var nm=$('sn').value.trim(),ph=$('sp').value.trim();
+ if(sending)return;var nm=$('sn').value.trim(),ph=$('sp').value.trim(),em=$('se').value.trim();
  if(nm.length<2){toast('اكتبي اسمك');return}
  if(!/^[+0-9\s().-]{8,25}$/.test(ph)){toast('اكتبي رقم هاتف صحيح');return}
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){toast('اكتبي بريدك الإلكتروني بشكل صحيح');return}
  if(!$('sc').checked){toast('وافقي على الإرسال أولاً');return}
  var q=window.__p||{p:0,days:0},b=$('send'),old=b.textContent;sending=true;b.textContent='جارٍ الإرسال...';
  var miss=[].map.call(document.querySelectorAll('#miss li'),function(l){return l.textContent}).join(' | ');
- var body={name:nm,phone:ph,market:(MK[S.f.mk]?MK[S.f.mk][0]:''),course:F('lp_name')||F('w0t0r0c0')||'',audience:F('lp_aud')||F('w0t0r1c0')||'',percent:q.p,missing:miss,days:q.days,summary:$('sum').textContent,website:$('sw').value};
+ var body={name:nm,phone:ph,email:em,market:(MK[S.f.mk]?MK[S.f.mk][0]:''),course:F('lp_name')||F('w0t0r0c0')||'',audience:F('lp_aud')||F('w0t0r1c0')||'',percent:q.p,missing:miss,days:q.days,summary:$('sum').textContent,website:$('sw').value};
  fetch('https://n8n.dounia1acdemy.com/webhook/after-course-summary',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
  .then(function(r){if(!r.ok)throw 0;b.textContent='تم الإرسال ✓';toast('وصل ملخصك للأكاديمية، شكراً');})
  .catch(function(){b.textContent=old;sending=false;toast('تعذّر الإرسال، جرّبي لاحقاً أو أرسليه عبر تلغرام')});

@@ -159,6 +159,7 @@ footer b{color:var(--ink)}
    <form id="f" novalidate>
     <label for="name">الاسم الكامل<input id="name" name="name" autocomplete="name" required></label>
     <label for="phone">رقم الهاتف / واتساب<input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="05XXXXXXXX" required></label>
+    <label for="email">البريد الإلكتروني<input id="email" name="email" type="email" inputmode="email" autocomplete="email" dir="ltr" placeholder="name@gmail.com" required></label>
     <label for="wilaya">الولاية / البلد<input id="wilaya" name="wilaya" autocomplete="address-level1"></label>
     <label for="field">تخصصك أو الشيء اللي تحبي تدربيه<input id="field" name="field" placeholder="مثال: تنظيم الوقت، الطبخ، التصوير..."></label>
     <label for="track">أي مسار يهمك؟<select id="track" name="track"><option>المسار الكامل: الكوتشينغ + كيف أبيع دوراتي</option><option>برنامج «كيف أبيع دوراتي؟» فقط</option><option>برنامج الكوتشينغ الاحترافي فقط</option></select></label>
@@ -187,6 +188,8 @@ f.addEventListener('submit',async e=>{
   e.preventDefault();
   const d=Object.fromEntries(new FormData(f).entries());
   if(!d.name.trim()||d.phone.replace(/\D/g,'').length<8){show('err','اكتبي اسمك ورقم هاتف صحيح.');return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((d.email||'').trim())){show('err','اكتبي بريدك الإلكتروني بشكل صحيح.');return}
+  d.email=d.email.trim();
   go.disabled=true;go.textContent='جاري الإرسال...';
   try{
     const r=await fetch(HOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});

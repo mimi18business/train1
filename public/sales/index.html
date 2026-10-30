@@ -59,7 +59,16 @@ section{padding:64px 0 0}
 footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
 .sticky{position:fixed;bottom:12px;left:16px;right:16px;display:none;z-index:9}
 .sticky a{display:block;text-align:center;background:linear-gradient(#F4DDA0,var(--gold));color:var(--plum-d);font-weight:800;padding:14px;border-radius:99px;text-decoration:none;box-shadow:0 8px 26px rgba(0,0,0,.35)}
-@media(max-width:720px){.two,.gift,.opts,.learn,.steps,.coach{grid-template-columns:1fr}.coach img{max-width:240px}.sticky{display:block}}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.vids figure{margin:0;background:var(--surface);border:1.5px solid var(--line);border-radius:22px;overflow:hidden}
+.vids video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;display:block}
+.vids figcaption{padding:12px 16px;font-weight:700}
+.course{margin-top:22px}.course video{width:100%;border-radius:22px;border:3px solid var(--gold);background:#000;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.chips span{background:var(--plum);color:#fff;padding:6px 18px;border-radius:99px;font-weight:700;font-size:15px}
+.opts{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+@media(max-width:900px){.four{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.four,.vids,.two,.gift,.learn,.steps,.coach{grid-template-columns:1fr}.coach img{max-width:240px}.sticky{display:block}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
 <body>
@@ -72,8 +81,10 @@ footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
 </div></header>
 <main class="wrap">
 <section><h2>الحيرة معناها عندك خيارات</h2>
- <div class="two">
+ <div class="four">
   <div class="card"><b>فريلانس</b>تبيعي مهارتك: تصميم، كتابة، تسيير صفحات، ترجمة.</div>
+  <div class="card"><b>التسويق بالعمولة</b>تبدأي بلا منتج، وتتعلمي تسوّقي لغيرك وتربحي عمولة.</div>
+  <div class="card"><b>تدريب</b>تحولي خبرتك لدورة أو تدريب تعلمي بيه غيرك.</div>
   <div class="card dark"><b>مشروع خاص</b>منتج أو خدمة باسمك.</div>
  </div>
  <p class="notfinal">واش نختار واحد وبس؟ لا. تقدري تبدأي بخدمة وتبني مشروعك بالتدريج. القرار ماشي نهائي.</p>
@@ -82,10 +93,20 @@ footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
 <section><h2>كيفاش تحددي نقطة بدايتك؟</h2><p class="lead">اختاري الجملة اللي تشبهك:</p>
  <div class="opts" role="group" aria-label="اختاري حالتك">
   <button class="opt" data-k="0" aria-pressed="false">عندي مهارة</button>
-  <button class="opt" data-k="1" aria-pressed="false">عندي فكرة منتج وميزانية صغيرة</button>
-  <button class="opt" data-k="2" aria-pressed="false">ماني متأكدة</button>
+  <button class="opt" data-k="1" aria-pressed="false">ما عنديش رأس مال</button>
+  <button class="opt" data-k="2" aria-pressed="false">عندي خبرة نحب نعلمها</button>
+  <button class="opt" data-k="3" aria-pressed="false">عندي فكرة منتج وميزانية صغيرة</button>
+  <button class="opt" data-k="4" aria-pressed="false">ماني متأكدة</button>
  </div>
  <div id="res" role="status" aria-live="polite"></div>
+</section>
+
+<section><h2>اسمعي من الكوتش دنيا</h2><p class="lead">ثلاث فيديوهات قصيرة تجاوبك على أسئلة كل وحدة حائرة.</p>
+ <div class="vids">
+  <figure><video controls preload="none" playsinline poster="s1.jpg"><source src="s1.mp4" type="video/mp4"></video><figcaption>سرّ الشخص الناجح</figcaption></figure>
+  <figure><video controls preload="none" playsinline poster="s2.jpg"><source src="s2.mp4" type="video/mp4"></video><figcaption>مترددة باش تطلقي مشروع؟</figcaption></figure>
+  <figure><video controls preload="none" playsinline poster="s3.jpg"><source src="s3.mp4" type="video/mp4"></video><figcaption>هل أحتاج رأس مال لأخدم أونلاين؟</figcaption></figure>
+ </div>
 </section>
 
 <section><h2>واش تتعلمي في الورشة</h2>
@@ -101,6 +122,20 @@ footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
  <div class="gift">
   <div class="card"><b>ملف تسيير مشروع التجارة الإلكترونية</b>من الفكرة إلى أول مبيع.</div>
   <div class="card"><b>ورشة مسجلة حول أدوات الذكاء الاصطناعي</b>ChatGPT · Canva · Midjourney</div>
+ </div>
+</section>
+
+<section><h2>الورشة المسجلة</h2><p class="lead">«أسرار المبيعات: من المعرفة إلى الربح». دورة مسجلة تقدري تشوفيها في أي وقت.</p>
+ <div class="course">
+  <video controls preload="none" playsinline poster="course.jpg"><source src="course.mp4" type="video/mp4"></video>
+  <div class="chips"><span>مهارة العمل أونلاين</span><span>سيكولوجية الجماهير</span><span>التسويق والبيع</span></div>
+  <div class="learn" style="margin-top:18px">
+   <div><i>1</i>المقدمة: ماهو العمل أونلاين؟ ومن الفكرة إلى أول عميلة</div>
+   <div><i>2</i>كيف أعمل أونلاين؟</div>
+   <div><i>3</i>أسرار الاستهداف</div>
+   <div><i>4</i>التسويق بالعمولة</div>
+   <div><i>5</i>ورشة الذكاء الاصطناعي</div>
+  </div>
  </div>
 </section>
 
@@ -131,7 +166,7 @@ footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
 </main>
 <div class="sticky"><a href="#reg">سجلي مكانك</a></div>
 <script>
-const R=[["فريلانس يبدأ بأقل","عندك مهارة؟ ابدأي بخدمة تبيعيها كفريلانس، ومنها تبني اسمك وتطوريه لمشروع."],["مشروع صغير","عندك فكرة منتج وميزانية صغيرة؟ ابدأي بمشروع صغير باسمك وجربيه قبل ما توسعي."],["جربي خدمة صغيرة وتعلمي السوق","ماكيش متأكدة؟ جربي خدمة صغيرة وتعلمي السوق، والورشة تعطيك الدليل باش تقرري."]];
+const R=[["فريلانس يبدأ بأقل","عندك مهارة؟ ابدأي بخدمة تبيعيها كفريلانس (تصميم، كتابة، تسيير صفحات، ترجمة)، ومنها تبني اسمك."],["التسويق بالعمولة","بلا رأس مال؟ تعلمي ثم اعملي: ابدأي بالتسويق بالعمولة وتعلمي أسرار التسويق والبيع."],["تدريب","عندك خبرة؟ حوليها لتدريب تعلمي بيه غيرك، وتعلمي كيفاش تبيعيه."],["مشروع صغير","عندك فكرة منتج وميزانية صغيرة؟ ابدأي بمشروع صغير باسمك وجربيه قبل ما توسعي."],["جربي خدمة صغيرة وتعلمي السوق","ماكيش متأكدة؟ جربي خدمة صغيرة وتعلمي السوق، والورشة تعطيك الدليل باش تقرري."]];
 document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{document.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');const r=R[b.dataset.k],e=document.getElementById('res');e.style.display='block';e.innerHTML='<b></b><span></span>';e.firstChild.textContent=r[0];e.lastChild.textContent=r[1]});
 const ENDPOINT="https://n8n.dounia1acdemy.com/webhook/workshop-signup";
 document.getElementById('f').addEventListener('submit',async ev=>{ev.preventDefault();const f=ev.target,m=document.getElementById('msg'),g=document.getElementById('go');

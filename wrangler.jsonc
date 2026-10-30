@@ -7,7 +7,6 @@
     { "pattern": "train1.dounia1acdemy.com", "custom_domain": true },
     { "pattern": "training.dounia1acdemy.com", "custom_domain": true },
     { "pattern": "trainpro.dounia1acdemy.com", "custom_domain": true },
-    { "pattern": "coaching.dounia1acdemy.com", "custom_domain": true },
-    { "pattern": "sales.dounia1acdemy.com", "custom_domain": true }
+    { "pattern": "coaching.dounia1acdemy.com", "custom_domain": true }
   ]
 }

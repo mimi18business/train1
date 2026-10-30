@@ -155,7 +155,8 @@ footer{margin-top:56px;color:var(--muted);font-size:14px;text-align:center}
   <label for="n">الاسم الكامل</label><input id="n" autocomplete="name" required>
   <label for="p">رقم الهاتف / واتساب</label><input id="p" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="05 XX XX XX XX" required>
   <label for="e">البريد الإلكتروني</label><input id="e" type="email" inputmode="email" autocomplete="email" dir="ltr" placeholder="name@gmail.com" required>
-  <label for="w">الولاية (اختياري)</label><input id="w">
+  <label for="w">الولاية</label><input id="w" autocomplete="address-level1" required>
+  <label for="a">العنوان</label><input id="a" autocomplete="street-address" required>
   <input class="hp" id="site" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
   <button class="btn" type="submit" id="go">سجلي الآن</button>
   <p id="msg" role="status" aria-live="polite"></p>
@@ -170,10 +171,14 @@ const R=[["فريلانس يبدأ بأقل","عندك مهارة؟ ابدأي �
 document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{document.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');const r=R[b.dataset.k],e=document.getElementById('res');e.style.display='block';e.innerHTML='<b></b><span></span>';e.firstChild.textContent=r[0];e.lastChild.textContent=r[1]});
 const ENDPOINT="https://n8n.dounia1acdemy.com/webhook/workshop-signup";
 document.getElementById('f').addEventListener('submit',async ev=>{ev.preventDefault();const f=ev.target,m=document.getElementById('msg'),g=document.getElementById('go');
- const n=f.n.value.trim(),p=f.p.value.trim(),em=f.e.value.trim();
- if(n.length<2||!/^[+0-9\s().-]{8,25}$/.test(p)||!/^\S+@\S+\.\S+$/.test(em)){m.textContent='تأكدي من الاسم ورقم الهاتف والبريد الإلكتروني.';return}
+ const n=f.n.value.trim(),p=f.p.value.trim(),em=f.e.value.trim(),w=f.w.value.trim(),ad=f.a.value.trim();
+ if(n.length<2){m.textContent='يرجى كتابة الاسم الكامل.';return}
+ if(!/^[+0-9\s().-]{8,25}$/.test(p)){m.textContent='يرجى كتابة رقم هاتف صحيح.';return}
+ if(!/^\S+@\S+\.\S+$/.test(em)){m.textContent='يرجى كتابة بريد إلكتروني صحيح.';return}
+ if(w.length<2){m.textContent='يرجى كتابة الولاية.';return}
+ if(ad.length<5){m.textContent='يرجى كتابة العنوان كاملاً.';return}
  g.disabled=true;m.textContent='جاري التسجيل...';
- try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,phone:p,email:em,wilaya:f.w.value.trim(),website:f.site.value,offer:'ورشة أسرار المبيعات'})});
+ try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,phone:p,email:em,wilaya:w,address:ad,website:f.site.value,offer:'ورشة أسرار المبيعات'})});
   if(!r.ok)throw 0;m.textContent='تم تسجيلك. نتواصلوا معاك قريباً.';f.reset()}catch(e){m.textContent='صار خطأ. جربي مرة ثانية أو اتصلي على 0782076898.';g.disabled=false}});
 </script>
 </body></html>
